@@ -1,0 +1,14 @@
+<FlashCard>:
+    orientation: "vertical"
+    front: ""
+    back: ""
+
+    Label:
+        id: front_label
+        text: root.front
+    Label:
+        id: back_label
+        text: ""
+    Button:
+        text: "Reveal"
+        on_press: app.reveal_card()

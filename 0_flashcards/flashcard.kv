@@ -1,0 +1,27 @@
+<FlashCard>:
+    orientation: "vertical"
+    front: ""
+    back: ""
+    revealed: False
+
+    Label:
+        id: front_label
+        text: root.front
+    Label:
+        id: back_label
+        text: ""
+    Button:
+        text: "Reveal"
+        on_press: app.reveal_card()
+        opacity: 1 if not root.revealed else 0
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        opacity: 1 if root.revealed else 0
+        Button:
+            text: "Incorrect"
+            on_press: app.mark_review(False)
+        Button:
+            text: "Correct"
+            on_press: app.mark_review(True)
+
