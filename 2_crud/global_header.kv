@@ -1,0 +1,12 @@
+#:kivy 1.0
+
+<GlobalHeader>:
+    size_hint_y: None
+    height: "50dp"
+    orientation: 'horizontal'
+    spacing: 10
+    padding: 10
+
+    Button:
+        text: 'New Card'
+        on_release: app.root.current = 'add_card'
