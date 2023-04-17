@@ -1,0 +1,21 @@
+#:kivy 1.0
+
+<EditorLayout>:
+    orientation: "horizontal"
+    TextInput:
+        id: text_input
+        text: ""
+        font_size: 16
+        size_hint_x: 0.5
+        background_color: 1, 1, 1, 1
+        foreground_color: 0, 0, 0, 1
+    Label:
+        id: rendered_label
+        text: text_input.text
+        markup: True
+        font_size: 16
+        size_hint_x: 0.5
+        text_size: self.width, None
+        height: self.texture_size[1]
+        valign: 'top'
+        padding: 10, 10
