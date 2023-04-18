@@ -1,1 +1,38 @@
 # Kivy UI definitions
+<CardFormScreen>:
+    name: "card_form_screen"
+    front: front
+    back: back
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: "Add a Card"
+
+        TextInput:
+            id: front
+            hint_text: "Front"
+            multiline: True
+
+        TextInput:
+            id: back
+            hint_text: "Back"
+            multiline: True
+
+        BoxLayout:
+            orientation: "horizontal"
+
+           
+<WelcomeScreen>:
+    name: "welcome_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: "Welcome!"
+
+        Button:
+            text: "Add Card"
+            on_release: root.go_to_card_form()
