@@ -1,4 +1,3 @@
-# Kivy UI definitions
 <CardFormScreen>:
     name: "card_form_screen"
     front: front
@@ -23,7 +22,14 @@
         BoxLayout:
             orientation: "horizontal"
 
-           
+            Button:
+                text: "Add Card"
+                on_release: root.add_card()
+
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
 <WelcomeScreen>:
     name: "welcome_screen"
 

@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import ScreenManager
 from screens import WelcomeScreen, CardFormScreen
 from utils.database_utils import initialize_database
 from kivy.modules import inspector
-
+from kivy.config import Config
 
 class MainApp(App):
     def build(self):
@@ -15,4 +15,5 @@ class MainApp(App):
         return sm
 
 if __name__ == "__main__":
+    Config.set('modules', 'inspector', '')
     MainApp().run()
