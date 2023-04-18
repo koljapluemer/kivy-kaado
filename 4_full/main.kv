@@ -1,3 +1,21 @@
+#:kivy 1.0
+#:import Header widgets.Header
+
+
+<WelcomeScreen>:
+    name: "welcome_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+
+        Header:
+
+        Label:
+            text: "Welcome!"
+            size_hint_y: None
+            height: 50
+
 <CardFormScreen>:
     name: "card_form_screen"
     front: front
@@ -5,9 +23,14 @@
 
     BoxLayout:
         orientation: "vertical"
+        padding: 10
+
+        Header:
 
         Label:
             text: "Add a Card"
+            size_hint_y: None
+            height: 50
 
         TextInput:
             id: front
@@ -21,6 +44,8 @@
 
         BoxLayout:
             orientation: "horizontal"
+            size_hint_y: None
+            height: 50
 
             Button:
                 text: "Add Card"
@@ -29,16 +54,3 @@
             Button:
                 text: "Cancel"
                 on_release: root.cancel()
-
-<WelcomeScreen>:
-    name: "welcome_screen"
-
-    BoxLayout:
-        orientation: "vertical"
-
-        Label:
-            text: "Welcome!"
-
-        Button:
-            text: "Add Card"
-            on_release: root.go_to_card_form()
