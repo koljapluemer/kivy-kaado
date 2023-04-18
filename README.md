@@ -11,3 +11,7 @@ Slow attempt to rebuild kaado with kivy.
  `1_flashcards_ui` is an outdated experiment, I think.
 
  `2_crud` shall grow into a CRUD app for `Card` and `Tag`. I think that's a good starting point to build the whole of kaado actually. So far, it's only a very quick test of ScreenManager.
+
+ ## Misc
+
+ `*_screen.py` **must** inherit from `Screen`.
