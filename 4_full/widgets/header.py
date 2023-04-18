@@ -17,10 +17,9 @@ class Header(BoxLayout):
         add_card_button.bind(on_release=self.go_add_card)
         self.add_widget(add_card_button)
 
-        card_list_button = Button(text="Card List", size_hint_x=None, width=100)
-        # Uncomment the following line when you implement the CardListScreen
-        # card_list_button.bind(on_release=self.go_card_list)
-        self.add_widget(card_list_button)
+        about_button = Button(text="About", size_hint_x=None, width=100)
+        about_button.bind(on_release=self.go_about)
+        self.add_widget(about_button)
 
     def go_home(self, instance):
         self.parent.parent.manager.current = "welcome_screen"
@@ -28,6 +27,9 @@ class Header(BoxLayout):
     def go_add_card(self, instance):
         self.parent.parent.manager.current = "card_form_screen"
 
+    def go_about(self, instance):
+        self.parent.parent.manager.current = "about_screen"
+        
     # Uncomment the following method when you implement the CardListScreen
     # def go_card_list(self, instance):
     #     self.parent.parent.manager.current = "card_list_screen"

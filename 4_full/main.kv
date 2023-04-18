@@ -54,3 +54,17 @@
             Button:
                 text: "Cancel"
                 on_release: root.cancel()
+
+<AboutScreen>:
+    orientation: "vertical"
+
+    Header:
+        id: header
+        title: "About"
+
+    ScrollView:
+        BoxLayout:
+            id: header_list
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height
