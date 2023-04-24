@@ -2,3 +2,4 @@
 from .card_form_screen import CardFormScreen
 from .welcome_screen import WelcomeScreen
 from .about_screen import AboutScreen
+from .queue_screen import QueueScreen
