@@ -1,6 +1,6 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
-from screens import WelcomeScreen, CardFormScreen, AboutScreen, QueueScreen
+from screens import WelcomeScreen, CardFormScreen, AboutScreen, QueueScreen, CardListScreen
 from utils.database_utils import initialize_database
 from kivy.modules import inspector
 from kivy.config import Config
@@ -20,6 +20,7 @@ class MainApp(App):
         sm.add_widget(CardFormScreen(name="card_form_screen"))
         sm.add_widget(AboutScreen(name="about_screen"))
         sm.add_widget(QueueScreen(name="queue_screen"))
+        sm.add_widget(CardListScreen(name="card_list_screen"))
         return sm
 
 if __name__ == "__main__":

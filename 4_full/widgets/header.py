@@ -25,6 +25,10 @@ class Header(BoxLayout):
         queue_button.bind(on_release=self.go_queue)
         self.add_widget(queue_button)
 
+        card_list_button = Button(text="Card List", size_hint_x=None, width=100)
+        card_list_button.bind(on_release=self.go_card_list)
+        self.add_widget(card_list_button)
+
     def go_home(self, instance):
         self.parent.parent.manager.current = "welcome_screen"
 
@@ -36,6 +40,9 @@ class Header(BoxLayout):
 
     def go_queue(self, instance):
         self.parent.parent.manager.current = "queue_screen"
+
+    def go_card_list(self, instance):
+        self.parent.parent.manager.current = "card_list_screen"
 
         
     # Uncomment the following method when you implement the CardListScreen
