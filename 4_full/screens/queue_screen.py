@@ -13,12 +13,15 @@ class QueueScreen(Screen):
         # get a random card from the database
         card = random.choice(Card.select())
         self.flashcard = card  
+        # remove old flashcard widget
+        self.ids.queue_box_layout.clear_widgets()
+        flashcard_widget = FlashCard(front=self.flashcard.front, back=self.flashcard.back)
 
+        self.ids.queue_box_layout.add_widget(flashcard_widget)
 
     def on_enter(self):
         self.load_next_card()
-        flashcard_widget = FlashCard(front=self.flashcard.front, back=self.flashcard.back)
-        self.add_widget(flashcard_widget)
+   
 
 
 
@@ -26,13 +29,10 @@ class FlashCard(BoxLayout):
     front = StringProperty("")
     back = StringProperty("")
     revealed = BooleanProperty(False)
-
-    # def build(self):
-    #     # add functionality to #button_reveal button
-    #     button_reveal = self.ids.button_reveal
-    #     button_reveal.bind(on_release=self.reveal_card)
-
-
+    
     def reveal_card (self):
-        print("reveal card")
         self.revealed = True
+
+    def mark_review(self, wasCorrect):
+        # call load_next-card of parent
+        self.parent.parent.parent.load_next_card()
