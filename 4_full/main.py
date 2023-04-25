@@ -4,10 +4,16 @@ from screens import WelcomeScreen, CardFormScreen, AboutScreen, QueueScreen
 from utils.database_utils import initialize_database
 from kivy.modules import inspector
 from kivy.config import Config
+# import BoxLayout
+from kivy.uix.boxlayout import BoxLayout
 
 class MainApp(App):
     def build(self):
         initialize_database()
+
+
+        root = BoxLayout(orientation="vertical")
+        # root.add_widget(Header())
 
         sm = ScreenManager()
         sm.add_widget(WelcomeScreen(name="welcome_screen"))

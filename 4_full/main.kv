@@ -10,11 +10,21 @@
         padding: 10
 
         Header:
+            size_hint_y: 1
 
-        Label:
-            text: "Welcome!"
-            size_hint_y: None
-            height: 50
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 10
+
+            Label:
+                text: "Welcome!"
+                size_hint_y: None
+                height: 50
+
+            Label:
+                text: "This is offline Kaado."
+                size_hint_y: None
+                height: 50
 
 
 <QueueScreen>:
@@ -25,11 +35,15 @@
         padding: 10
 
         Header:
+            size_hint_y: 1
 
-        Label:
-            text: "Queue."
-            size_hint_y: None
-            height: 50
+        BoxLayout:
+            size_hint_y: 10
+
+            Label:
+                text: "Queue."
+                size_hint_y: None
+                height: 50
 
 <CardFormScreen>:
     name: "card_form_screen"
@@ -41,45 +55,47 @@
         padding: 10
 
         Header:
-
-        Label:
-            text: "Add a Card"
-            size_hint_y: None
-            height: 50
-
-        TextInput:
-            id: front
-            hint_text: "Front"
-            multiline: True
-
-        TextInput:
-            id: back
-            hint_text: "Back"
-            multiline: True
+            size_hint_y: 1
 
         BoxLayout:
-            orientation: "horizontal"
-            size_hint_y: None
-            height: 50
+            size_hint_y: 10
 
-            Button:
-                text: "Add Card"
-                on_release: root.add_card()
 
-            Button:
-                text: "Cancel"
-                on_release: root.cancel()
+            Label:
+                text: "Add a Card"
+                size_hint_y: None
+                height: 50
+
+            TextInput:
+                id: front
+                hint_text: "Front"
+                multiline: True
+
+            TextInput:
+                id: back
+                hint_text: "Back"
+                multiline: True
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+                height: 50
+
+                Button:
+                    text: "Add Card"
+                    on_release: root.add_card()
+
+                Button:
+                    text: "Cancel"
+                    on_release: root.cancel()
+
+
 
 <AboutScreen>:
-    orientation: "vertical"
+    name: "about_screen"
 
-    Header:
-        id: header
-        title: "About"
+    BoxLayout:
+        orientation: "vertical"
 
-    ScrollView:
-        BoxLayout:
-            id: header_list
-            orientation: "vertical"
-            size_hint_y: None
-            height: self.minimum_height
+        Header:
+            size_hint_y: 1
