@@ -112,9 +112,11 @@
         BoxLayout:
             size_hint_y: 10
             ScrollView:
+                name: "card_list_scroll_view"
                 do_scroll_x: False
                 do_scroll_y: True
                 BoxLayout:
+                    id: card_list_box_layout
                     orientation: "vertical"
                     Label: 
                         text: "Card 1"
