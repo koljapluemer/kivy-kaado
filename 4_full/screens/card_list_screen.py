@@ -14,7 +14,6 @@ class CardListScreen(Screen):
     # show cards in the card list screen
     def show_cards(self):
         cards = self.get_cards()
-        print("EXISTING IDS", self.ids)
         card_list_box_layout = self.ids.card_list_box_layout
         card_list_box_layout.clear_widgets()
         for card in cards:
