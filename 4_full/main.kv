@@ -1,7 +1,6 @@
 #:kivy 1.0
 #:import Header widgets.Header
 
-
 <WelcomeScreen>:
     name: "welcome_screen"
 
@@ -142,7 +141,7 @@
             font_size: '20sp'
             halign: 'center'
             valign: 'middle'
-            text_size: self.width - 20, None
+            # text_size: self.width - 20, None
             color: 0, 0, 0, .8
         Label:
             id: back_label
@@ -150,12 +149,13 @@
             font_size: '20sp'
             halign: 'center'
             valign: 'middle'
-            text_size: self.width - 20, None
-            opacity: 1 if root.revealed else 0
+            # text_size: self.width - 20, None
+            # opacity: 1 if root.revealed else 0
             color: 0, 0, 0, .8
     Button:
+        id: button_reveal
+        on_press: root.reveal_card()
         text: "Reveal"
-        on_press: app.reveal_card()
         opacity: 1 if not root.revealed else 0
         size_hint_y: 0.1
     BoxLayout:

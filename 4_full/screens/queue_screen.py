@@ -15,19 +15,24 @@ class QueueScreen(Screen):
         self.flashcard = card  
 
 
-
-    # def on_enter(self, *args):
-    #     self.load_next_card()      
-
     def on_enter(self):
         self.load_next_card()
         flashcard_widget = FlashCard(front=self.flashcard.front, back=self.flashcard.back)
         self.add_widget(flashcard_widget)
+
+
 
 class FlashCard(BoxLayout):
     front = StringProperty("")
     back = StringProperty("")
     revealed = BooleanProperty(False)
 
+    # def build(self):
+    #     # add functionality to #button_reveal button
+    #     button_reveal = self.ids.button_reveal
+    #     button_reveal.bind(on_release=self.reveal_card)
+
+
     def reveal_card (self):
-        self.flashcard.revealed = True
+        print("reveal card")
+        self.revealed = True
