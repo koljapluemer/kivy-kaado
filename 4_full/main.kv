@@ -39,11 +39,8 @@
 
         BoxLayout:
             size_hint_y: 10
-
-            Label:
-                text: "Queue."
-                size_hint_y: None
-                height: 50
+            id: queue_box_layout
+       
 
 <CardFormScreen>:
     name: "card_form_screen"
@@ -119,3 +116,58 @@
                     height: 1000
                     id: card_list_box_layout
                     orientation: "vertical"
+
+
+<FlashCard>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 10
+    front: ""
+    back: ""
+    revealed: False
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_y: 0.6
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [10,]
+        Label:
+            id: front_label
+            text: root.front
+            font_size: '20sp'
+            halign: 'center'
+            valign: 'middle'
+            text_size: self.width - 20, None
+            color: 0, 0, 0, .8
+        Label:
+            id: back_label
+            text: ""
+            font_size: '20sp'
+            halign: 'center'
+            valign: 'middle'
+            text_size: self.width - 20, None
+            opacity: 1 if root.revealed else 0
+            color: 0, 0, 0, .8
+    Button:
+        text: "Reveal"
+        on_press: app.reveal_card()
+        opacity: 1 if not root.revealed else 0
+        size_hint_y: 0.1
+    BoxLayout:
+        orientation: "horizontal"
+        spacing: 10
+        size_hint_y: 0.3
+        opacity: 1 if root.revealed else 0
+        Button:
+            text: "Incorrect"
+            background_color: 1, 0, 0, 1
+            on_press: app.mark_review(False)
+        Button:
+            text: "Correct"
+            background_color: 0, 1, 0, 1
+            on_press: app.mark_review(True)
