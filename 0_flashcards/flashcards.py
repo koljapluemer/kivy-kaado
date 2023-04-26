@@ -51,7 +51,6 @@ def import_cards_from_csv(file_path):
 
 import_cards_from_csv("world_capitals.csv")
 
-
 class FlashCard(BoxLayout):
     front = StringProperty("")
     back = StringProperty("")
