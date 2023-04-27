@@ -9,6 +9,8 @@ from kivy.uix.boxlayout import BoxLayout
 import pandas as pd
 from models.card import Card, Tag
 import csv
+from kivy.core.window import Window
+
 
 class MainApp(App):
     def build(self):
@@ -54,5 +56,6 @@ class MainApp(App):
 
 
 if __name__ == "__main__":
+    Window.maximize()
     Config.set('modules', 'inspector', '')
     MainApp().run()
