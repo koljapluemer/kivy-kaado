@@ -1,4 +1,4 @@
-Slow attempt to rebuild kaado with kivy.
+Experiments in building a flashcard-based desktop app with kivy.
 
 ## Resources
 
