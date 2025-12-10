@@ -1,3 +1,5 @@
+<img width="820" height="655" alt="Pasted image 20250227111242" src="https://github.com/user-attachments/assets/b7e23972-d962-400e-b346-2f1255ac0653" />
+
 Experiments in building a flashcard-based desktop app with kivy.
 
 ## Resources
